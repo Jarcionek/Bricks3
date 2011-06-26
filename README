@@ -1,3 +1,5 @@
 Jewel Quest Java game in Swing.
 
 IMPORTANT: In some (even newest) versions of JVM, SwingWorker.class I used doesn't work correctly and the game becomes unplayable. If no brick is selected and pressing left mouse button on a brick doesn't make it selected, then the game doesn't work with your version of JVM.
+
+To turn the cheats on type "debugmode". To start custom game type "custom" when cheats are active.
