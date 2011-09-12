@@ -77,7 +77,11 @@ public class Main {
         window.addKeyListener(new KeyAdapter() {
             private String password = "debugmode";
             private String customGameStarter = "custom";
+            private String botStart = "botstart";
+            private String botStop = "botstop";
             private int i = 0;
+            private int j = 0;
+            private int k = 0;
             @Override
             public void keyTyped(KeyEvent e) {
                 char x = e.getKeyChar();
@@ -110,6 +114,32 @@ public class Main {
                     } else {
                         i = 0;
                     }
+                }
+
+                if(x == botStart.charAt(j)) {
+                    j++;
+                    if(j == botStart.length()) {
+                        j = 0;
+                        Toolkit.getDefaultToolkit().beep();
+                        Bot.botStart();
+                    }
+                } else if(x == botStart.charAt(0)) {
+                    j = 1;
+                } else {
+                    j = 0;
+                }
+
+                if(x == botStop.charAt(k)) {
+                    k++;
+                    if(k == botStop.length()) {
+                        k = 0;
+                        Bot.botStop();
+                        Toolkit.getDefaultToolkit().beep();
+                    }
+                } else if(x == botStop.charAt(0)) {
+                    k = 1;
+                } else {
+                    k = 0;
                 }
             }
         });
